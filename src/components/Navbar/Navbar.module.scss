@@ -1,0 +1,53 @@
+@import "../../sassStyles/typography";
+@import "../../sassStyles/colors";
+@import "../../sassStyles/mixins";
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  padding: 2rem 8rem;
+  text-transform: uppercase;
+  border-bottom: 0.3px solid rgba($color: $textColorSecondary, $alpha: 0.5);
+
+  @include responsiveMax($phone) {
+    padding: 2rem 1rem;
+  }
+
+  .navIcon {
+    cursor: pointer;
+    font-size: 3rem;
+  }
+
+  &__header {
+    font-family: $fontPrimary;
+    font-size: 3rem;
+  }
+
+  &__ul {
+    display: flex;
+    justify-content: space-between;
+    width: 60rem;
+  }
+}
+
+.nav__links {
+  list-style: none;
+  font-size: 1.3rem;
+  font-family: $fontSecondary;
+  color: $textColorSecondary;
+  border-bottom: 1px solid transparent;
+  border-top: 1px solid transparent;
+  transition: all 0.25s;
+  cursor: pointer;
+  & a {
+    text-decoration: none;
+    color: $textColorSecondary;
+    &:hover {
+      color: $textColorPrimary;
+      border-bottom: 1px solid $textColorPrimary;
+      transition: all 0.25s;
+    }
+  }
+}

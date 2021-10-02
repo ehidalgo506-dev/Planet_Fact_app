@@ -1,0 +1,18 @@
+@import "./sassStyles/colors";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
+}
+
+html {
+  font-size: 10px;
+}
+body {
+  background: url("./assets/background-stars.svg") center $primaryColor;
+  background-size: cover;
+  color: $textColorPrimary;
+}
+
+// Main
