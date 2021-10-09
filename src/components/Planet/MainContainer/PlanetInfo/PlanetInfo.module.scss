@@ -1,0 +1,129 @@
+@import "../../../../sassStyles/typography";
+@import "../../../../sassStyles/colors";
+@import "../../../../sassStyles/mixins";
+
+.planet__info {
+  width: 40rem;
+  height: 50rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  font-family: $fontSecondary;
+  transition: all 0.25s ease-out;
+  padding: 0;
+
+  @include responsiveMax($table-land) {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+  }
+  @include responsiveMax($phone) {
+    width: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  &_header {
+    font-size: 1.5rem;
+    line-height: 2;
+    margin-bottom: 3rem;
+
+    @include responsiveMax($table-land) {
+      width: 45%;
+    }
+
+    @include responsiveMax($phone) {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  &_title {
+    font-size: 8rem;
+    font-family: $fontPrimary;
+
+    @include responsiveMax($table-land) {
+      font-size: 4rem;
+    }
+    text-transform: uppercase;
+  }
+
+  &_source {
+    margin-top: 3rem;
+    font-size: 1.5rem;
+
+    & a {
+      text-decoration: none;
+      text-decoration: underline;
+      color: $textColorSecondary;
+    }
+    & span {
+      margin: 0 1rem;
+
+      &:hover {
+        color: $textColorPrimary;
+        transition: all 0.25s ease-out;
+      }
+    }
+  }
+
+  & .buttons__container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    @include responsiveMax($table-land) {
+      width: 40%;
+      height: 20rem;
+    }
+
+    @include responsiveMax($phone) {
+      width: 100%;
+    }
+
+    & .btn {
+      font-family: $fontSecondary;
+      font-weight: bold;
+      background-color: transparent;
+      color: $textColorPrimary;
+      border: 1px solid $textColorSecondary;
+      letter-spacing: 2px;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      padding: 1.5rem 2rem;
+      border-radius: 0;
+      text-align: start;
+      cursor: pointer;
+      transition: all 0.25s ease-out;
+      margin: 1rem 0;
+
+      @include responsiveMin($desktop) {
+        &:hover {
+          background-color: $hover;
+          transition: all 0.25s ease-out;
+        }
+      }
+      @include responsiveMax($table-land) {
+        margin: 0;
+      }
+
+      & span {
+        color: $textColorSecondary;
+        font-weight: bolder;
+      }
+
+      &_active {
+        background-color: $earth;
+        transition: all 0.25s ease-out;
+      }
+
+      &__number {
+        padding-right: 1.5rem;
+      }
+    }
+  }
+}

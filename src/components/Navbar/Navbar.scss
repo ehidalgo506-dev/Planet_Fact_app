@@ -11,6 +11,10 @@
   text-transform: uppercase;
   border-bottom: 0.3px solid rgba($color: $textColorSecondary, $alpha: 0.5);
 
+  @include responsiveMax($table-land) {
+    flex-direction: column;
+  }
+
   @include responsiveMax($phone) {
     padding: 2rem 1rem;
   }
@@ -24,12 +28,16 @@
   &__header {
     font-family: $fontPrimary;
     font-size: 3rem;
+    @include responsiveMax($table-land) {
+      margin-bottom: 2rem;
+    }
   }
 
   &__ul {
     display: flex;
     justify-content: space-between;
     width: 60rem;
+    z-index: 100;
   }
 }
 
@@ -53,7 +61,7 @@
   }
 }
 
-@include responsiveMax($table-land) {
+@include responsiveMax($phone) {
   .nav {
     flex-direction: column;
     padding: 2rem 0;
