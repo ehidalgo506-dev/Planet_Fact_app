@@ -1,0 +1,55 @@
+@import "../../../sassStyles/colors";
+@import "../../../sassStyles/mixins";
+@import "../../../sassStyles/typography";
+
+.container {
+  width: 30rem;
+  font-family: $fontSecondary;
+  font-size: 1.5rem;
+  line-height: 2.3rem;
+
+  @include responsiveMax($table-land) {
+    font-size: 1.3rem;
+  }
+
+  @include responsiveMax($phone) {
+    text-align: center;
+  }
+
+  .header {
+    font-size: 6rem;
+    font-family: $fontPrimary;
+    margin-bottom: 4rem;
+
+    @include responsiveMax($table-land) {
+      font-size: 4rem;
+    }
+  }
+
+  .info {
+    margin-bottom: 2rem;
+    line-height: 2.8rem;
+  }
+
+  &__source {
+    &_text {
+      color: $textColorSecondary;
+    }
+
+    &_span {
+      font-weight: bolder;
+      text-decoration: underline;
+      cursor: pointer;
+      margin: 0 1rem;
+
+      &:hover {
+        color: $textColorPrimary;
+        transition: all 0.25s ease-out;
+      }
+    }
+
+    &_icon:hover {
+      color: $textColorPrimary;
+    }
+  }
+}

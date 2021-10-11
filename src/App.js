@@ -8,13 +8,6 @@ function App() {
     <div>
       <Navbar></Navbar>
       <Switch>
-        {/* <Route path="/Mercury">
-          <Planet planet="Mercury"></Planet>
-        </Route>
-        <Route path="/Venus">
-          <Planet planet="Venus"></Planet>
-        </Route> */}
-
         {data.map((planet, index) => {
           return (
             <Route path={`/${planet.name}`} key={index}>

@@ -2,17 +2,24 @@ import { MenuItems } from "../MenuItems";
 // import "./Navbar.module.scss";
 import "./Navbar.scss";
 import { useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function Navbar() {
   const [clickedMenu, setClickedMenu] = useState(false);
   const [isActive, setIsActive] = useState(false);
+  const [linkActive, setLinkActive] = useState(false);
 
   const menuList = useRef();
 
   const menuButtonHandler = () => {
     setClickedMenu(!clickedMenu);
     setIsActive(!isActive);
+  };
+
+  const activateLinkHandler = () => {
+    setIsActive(false);
+    setClickedMenu(false);
+    setLinkActive(!linkActive);
   };
 
   return (
@@ -29,10 +36,18 @@ function Navbar() {
       <ul className={`nav__ul ${isActive ? "active" : null}`} ref={menuList}>
         {MenuItems.map((element, index) => {
           return (
-            <li key={index} className={element.cName} to={element.path}>
+            <NavLink
+              key={index}
+              className={element.cName}
+              to={element.path}
+              onClick={activateLinkHandler}
+              activeClassName="nav__link_active"
+            >
               <div className={`nav__links-dot ${element.cNameDot}`}></div>
-              <Link to={element.path}>{element.title}</Link>
-            </li>
+              <p to={element.path} className="nav__links-a">
+                {element.title}
+              </p>
+            </NavLink>
           );
         })}
       </ul>

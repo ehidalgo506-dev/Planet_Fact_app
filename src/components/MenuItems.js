@@ -2,7 +2,7 @@ export const MenuItems = [
   {
     title: "Mercury",
     url: "#",
-    cName: "nav__links",
+    cName: "nav__links ",
     cNameDot: "nav__links-dot-mercury",
     path: "/Mercury",
   },

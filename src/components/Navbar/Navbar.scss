@@ -7,9 +7,18 @@
   justify-content: space-between;
   align-items: center;
   align-content: center;
-  padding: 2rem 8rem;
+  padding: 0 8rem;
   text-transform: uppercase;
   border-bottom: 0.3px solid rgba($color: $textColorSecondary, $alpha: 0.5);
+
+  .nav__link_active {
+    border-top: 3px solid $textColorPrimary;
+    color: $textColorPrimary;
+
+    & > * {
+      color: $textColorPrimary;
+    }
+  }
 
   @include responsiveMax($table-land) {
     flex-direction: column;
@@ -29,7 +38,10 @@
     font-family: $fontPrimary;
     font-size: 3rem;
     @include responsiveMax($table-land) {
-      margin-bottom: 2rem;
+      margin: 1.5rem 0 3rem 0;
+    }
+    @include responsiveMax($phone) {
+      margin: 0;
     }
   }
 
@@ -47,20 +59,45 @@
   font-family: $fontSecondary;
   color: $textColorSecondary;
   border-bottom: 1px solid transparent;
-  border-top: 1px solid transparent;
+  border-top: 3px solid transparent;
   transition: all 0.25s;
   cursor: pointer;
+  padding: 3rem 0;
+
+  &,
   & a {
     text-decoration: none;
+    border-top: 3px solid transparent;
     color: $textColorSecondary;
+    padding: 3rem 0;
+
+    @include responsiveMax($table-land) {
+      padding: 1.3rem 0;
+    }
+
     &:hover {
       color: $textColorPrimary;
-      border-bottom: 1px solid $textColorPrimary;
       transition: all 0.25s;
     }
   }
-}
 
+  &:hover {
+    color: $textColorSecondary;
+    border-top: 3px solid $textColorPrimary;
+    transition: all 0.25s;
+  }
+
+  &:active {
+    border-top: 3px solid red;
+    color: $textColorPrimary;
+    transition: all 0.25s;
+
+    @include responsiveMax($phone) {
+      border-color: transparent;
+    }
+  }
+}
+// Mobile Navigation
 @include responsiveMax($phone) {
   .nav {
     flex-direction: column;
@@ -101,17 +138,27 @@
     align-items: center;
     padding: 2rem 0;
     border-bottom: 1px solid rgba($color: $textColorSecondary, $alpha: 0.5);
+    .nav__link_active {
+      color: $textColorPrimary;
+      border-top: 3px solid transparent;
+
+      & > * {
+        color: $textColorPrimary;
+        font-weight: bolder;
+      }
+    }
 
     &:hover {
       background-color: #38384f;
+      color: $textColorPrimary;
     }
     & a {
-      color: #fff;
-      font-weight: bolder;
+      color: $textColorSecondary;
+      // font-weight: bolder;
 
       &:hover {
         color: $textColorPrimary;
-        border-bottom: 0px solid $textColorPrimary;
+        border-bottom: 0px solid transparent;
         transition: all 0.25s;
       }
     }
