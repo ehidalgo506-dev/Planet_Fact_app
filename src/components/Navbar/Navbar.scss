@@ -88,7 +88,7 @@
   }
 
   &:active {
-    border-top: 3px solid red;
+    border-top: 3px solid $textColorPrimary;
     color: $textColorPrimary;
     transition: all 0.25s;
 

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import classes from "./Planet.module.scss";
+import PlanetCards from "./PlanetCards/PlanetCards";
 import PlanetInfo from "./PlanetInfo/PlanetInfo";
 import PlanetNav from "./PlanetNav/PlanetNav";
 
@@ -35,7 +36,8 @@ function Planet(props) {
       {/* Images */}
       <div className={`${classes.container__image}`}>
         <img
-          // key={updateImageHandler(btnId)} //Enable this to apply effect to all the diff src image
+          //Enable this to apply effect to all the diff src image
+          // key={updateImageHandler(btnId)}
           src={
             require(`../../assets/planet-${updateImageHandler(btnId)}.svg`)
               .default
@@ -75,17 +77,22 @@ function Planet(props) {
       </div>
 
       {/* Planet Cards */}
-      <div className={classes.container__planetCards}>
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry. Lorem Ipsum has been the industry's standard dummy text ever
-        since the 1500s, when an unknown printer took a galley of type and
-        scrambled it to make a type specimen book. It has survived not only five
-        centuries, but also the leap into electronic typesetting, remaining
-        essentially unchanged. It was popularised in the 1960s with the release
-        of Letraset sheets containing Lorem Ipsum passages, and more recently
-        with desktop publishing software like Aldus PageMaker including versions
-        of Lorem Ipsum
-      </div>
+
+      <footer className={classes.footer}>
+        <PlanetCards
+          onTitle="Rotation Time"
+          onData={planet.rotation}
+        ></PlanetCards>
+        <PlanetCards
+          onTitle="Revolution Time"
+          onData={planet.revolution}
+        ></PlanetCards>
+        <PlanetCards onTitle="Radius" onData={planet.radius}></PlanetCards>
+        <PlanetCards
+          onTitle="Average temp."
+          onData={planet.temperature}
+        ></PlanetCards>
+      </footer>
     </section>
   );
 }
