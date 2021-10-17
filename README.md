@@ -26,8 +26,8 @@ Users should be able to:
 
 ### Screenshot
 
-![./sc1.png](./sc1.jpg)
-![./sc2.png](./sc2.jpg)
+![images/sc1.png](images/sc1.jpg)
+![images/sc2.png](images/sc2.jpg)
 
 ### Links
 
